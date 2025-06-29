@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --text-color: #1f2937;
+            --card-background: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .task-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .task-card {
+            background-color: var(--card-background);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .task-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .task-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .task-priority {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .task-priority.high {
+            background-color: #f87171;
+            color: white;
+        }
+
+        .task-priority.medium {
+            background-color: #fbbf24;
+            color: white;
+        }
+
+        .task-priority.low {
+            background-color: #34d399;
+            color: white;
+        }
+
+        .task-owner {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-summary {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .task-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-badge.in_progress {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .status-badge.completed {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .status-badge.pending {
+            background-color: #fbbf24;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .task-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Task Manager</h1>
+        </div>
+        <div class="task-list" id="taskList">
+            <!-- Tasks will be populated here -->
+        </div>
+    </div>
+
+    <script>
+        // Fetch task data from JSON file
+        fetch('./task_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const taskList = document.getElementById('taskList');
+                data.tasks.forEach(task => {
+                    const taskCard = createTaskCard(task);
+                    taskList.appendChild(taskCard);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading tasks:', error);
+                alert('Failed to load tasks. Please check if task_data.json exists.');
+            });
+
+        function createTaskCard(task) {
+            const card = document.createElement('div');
+            card.className = 'task-card';
+
+            card.innerHTML = `
+                <div class="task-header">
+                    <div class="task-name">${task.task_name}</div>
+                    <span class="task-priority ${task.priority}">${task.priority}</span>
+                </div>
+                <div class="task-owner">Owner: ${task.owner}</div>
+                <div class="task-summary">${task.summary}</div>
+                <div class="task-meta">
+                    <span>Due: ${new Date(task.due_date).toLocaleDateString()}</span>
+                    <span class="status-badge ${task.status}">${task.status}</span>
+                </div>
+            `;
+
+            return card;
+        }
+    </script>
+</body>
+</html>

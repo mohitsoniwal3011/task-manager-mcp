@@ -1,0 +1,158 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "task_name": "Design Website Homepage",
+      "owner": "John Smith",
+      "due_date": "2025-07-05",
+      "summary": "Create a modern and responsive homepage design for the company website",
+      "priority": "high",
+      "status": "in_progress",
+      "created_date": "2025-06-28",
+      "estimated_hours": 16,
+      "tags": [
+        "design",
+        "website",
+        "ui/ux"
+      ]
+    },
+    {
+      "id": "task-002",
+      "task_name": "Database Migration",
+      "owner": "Sarah Johnson",
+      "due_date": "2025-07-10",
+      "summary": "Migrate the production database to the new server environment",
+      "priority": "critical",
+      "status": "pending",
+      "created_date": "2025-06-28",
+      "estimated_hours": 24,
+      "tags": [
+        "database",
+        "migration",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "task-004",
+      "task_name": "User Research Interviews",
+      "owner": "Emily Davis",
+      "due_date": "2025-07-15",
+      "summary": "Conduct user interviews to gather feedback on the new app features",
+      "priority": "high",
+      "status": "in_progress",
+      "created_date": "2025-06-28",
+      "estimated_hours": 20,
+      "tags": [
+        "research",
+        "user feedback"
+      ]
+    },
+    {
+      "id": "task-005",
+      "task_name": "Marketing Campaign Launch",
+      "owner": "David Wilson",
+      "due_date": "2025-07-20",
+      "summary": "Launch the summer marketing campaign across all platforms",
+      "priority": "critical",
+      "status": "pending",
+      "created_date": "2025-06-28",
+      "estimated_hours": 40,
+      "tags": [
+        "marketing",
+        "campaign"
+      ]
+    },
+    {
+      "id": "task-006",
+      "task_name": "Security Audit",
+      "owner": "Sophia Brown",
+      "due_date": "2025-07-12",
+      "summary": "Perform a security audit on the new system architecture",
+      "priority": "high",
+      "status": "in_progress",
+      "created_date": "2025-06-28",
+      "estimated_hours": 30,
+      "tags": [
+        "security",
+        "audit"
+      ]
+    },
+    {
+      "id": "task-007",
+      "task_name": "Customer Support Training",
+      "owner": "James Anderson",
+      "due_date": "2025-07-18",
+      "summary": "Train the customer support team on the new ticketing system",
+      "priority": "medium",
+      "status": "completed",
+      "created_date": "2025-06-28",
+      "estimated_hours": 12,
+      "tags": [
+        "training",
+        "support"
+      ]
+    },
+    {
+      "id": "task-008",
+      "task_name": "Frontend Optimization",
+      "owner": "Olivia Martinez",
+      "due_date": "2025-07-08",
+      "summary": "Optimize the frontend code for better performance",
+      "priority": "medium",
+      "status": "in_progress",
+      "created_date": "2025-06-28",
+      "estimated_hours": 18,
+      "tags": [
+        "frontend",
+        "optimization"
+      ]
+    },
+    {
+      "id": "task-009",
+      "task_name": "Data Backup",
+      "owner": "Liam Garcia",
+      "due_date": "2025-07-02",
+      "summary": "Ensure all critical data is backed up before the update",
+      "priority": "low",
+      "status": "completed",
+      "created_date": "2025-06-28",
+      "estimated_hours": 6,
+      "tags": [
+        "backup",
+        "data"
+      ]
+    },
+    {
+      "id": "task-010",
+      "task_name": "Data Cleanup and Server Storage Backup",
+      "owner": "mohit",
+      "due_date": "2024-08-01",
+      "summary": "Perform data cleanup and backup all server storage within the next 7 days.",
+      "priority": "low",
+      "status": "pending",
+      "created_date": "2024-06-26",
+      "estimated_hours": 12,
+      "tags": [
+        "data cleanup",
+        "backup",
+        "server"
+      ]
+    },
+    {
+      "id": "task-003",
+      "task_name": "API Documentation Update",
+      "owner": "Alex Morgan",
+      "due_date": "2025-09-10",
+      "summary": "Recreate API documentation update task after accidental deletion.",
+      "priority": "low",
+      "status": "pending",
+      "created_date": "2025-07-01",
+      "estimated_hours": 10,
+      "tags": [
+        "documentation",
+        "api",
+        "restore"
+      ]
+    }
+  ]
+}
