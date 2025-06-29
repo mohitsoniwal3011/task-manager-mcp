@@ -30,7 +30,7 @@ task-manager-mcp/
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/mohitsoniwal3011/task-manager-mcp.git
    cd task-manager-mcp
    ```
 2. Install dependencies:
